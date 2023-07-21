@@ -1,0 +1,36 @@
+{
+  "seed": 2020,
+  "save_dir": "D:/Thesis/PEN-Net-for-Inpainting-pytorch/release_model_dtd/",
+  "data_loader": {
+    "name": "dtd",
+    "zip_root": "D:/Thesis/PEN-Net-for-Inpainting-pytorch/datazip",
+    "flist_root": "D:/Thesis/PEN-Net-for-Inpainting-pytorch/flist",
+    "mask": "square",
+    "extend": 20,
+    "w": 256,
+    "h": 256
+  },
+  "losses": {
+    "gan_type": "nsgan",
+    "hole_weight": 6,
+    "valid_weight": 1,
+    "pyramid_weight": 0.5,
+    "adversarial_weight": 0.1
+  },
+  "trainer": {
+    "type": "Adam",
+    "lr": 2e-4,
+    "d2glr": 1,
+    "beta1": 0.5,
+    "beta2": 0.999,
+    "verbosity": 2,
+    "iterations":33e3,
+    "save_freq": 1e3,
+    "valid_freq": 1e3,
+    "niter": 10e3,
+    "niter_steady": 31e3,
+    "batch_size": 6,
+    "num_workers": 1,
+    "log_step": 10
+  }
+}
