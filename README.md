@@ -11,7 +11,7 @@ The spatial pyramid attentive pooling (SPAP) module used dilated convolution to 
 <!-- ------------------------------------------------------------------------------ -->
 ## Results 
 
-![results](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/generated_imgs.png)?raw=true)
+![results](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/generated_imgs.png?raw=true)
 
 Here are the results obtained on 256x256 images from DTD dataset where (a) Original image, (b) Masked image, (c) Original model output, (d) Original model with SPAP module at decoder, (e) Original model with SPAP module for attention layers
 
