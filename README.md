@@ -19,7 +19,6 @@ Here are the results obtained on 256x256 images from DTD dataset where (a) Origi
 ![table](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/table.png?raw=true)
 
 
-FID, PSNR and SSIM values for different methods implemented.
 
 <!-- -------------------------------------------------------- -->
 ## Run 
