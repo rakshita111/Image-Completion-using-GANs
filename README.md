@@ -4,8 +4,9 @@ The existing work on Image Inpainting [PEN-Net](https://github.com/researchmm/PE
 ## Introduction 
 The spatial pyramid attentive pooling (SPAP) module used dilated convolution to capture the multi-scale information and further fuse the information from different levels of the pyramid through cascade attention. This is integrated with the PEN-Net in different ways to test for the improvement in the images generated. The SPAP module implemented in coarse-to-fine order is integrated at the multi-scale decoder and with the cross-layer attention transfer (ATN) at the encoder of PEN-Net separately. 
 
-![PEN-Net](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/PEN-Net.png?raw=true)
-![PEN-Net_SPAP](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/SPAP_PEN-Net.png?raw=true)
+![PEN-Net_SPAP](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/PEN-Net_SPAP.png?raw=true)
+
+
 
 <!-- ------------------------------------------------------------------------------ -->
 ## Results 
@@ -38,3 +39,8 @@ FID, PSNR and SSIM values for different methods implemented.
     * For example, `python test.py -c configs/celebahq.json -n pennet -m square -s 256 `
 4. Evaluating:
     * Run `python eval.py -r [result_path]`
+  
+<!-- ----------------------------------------------------- -->
+## Reference
+
+The code is majorly borrowed from [PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/master/docs/PEN-Net.gif?raw=true). The images of the architecture is taken from [paper1](https://arxiv.org/pdf/1904.07475.pdf?raw=true), [paper2](https://arxiv.org/abs/1901.06322) and modified. 
