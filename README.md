@@ -16,7 +16,8 @@ The spatial pyramid attentive pooling (SPAP) module used dilated convolution to 
 
 Here are the results obtained on 256x256 images from DTD dataset where (a) Original image, (b) Masked image, (c) Original model output, (d) Original model with SPAP module at decoder, (e) Original model with SPAP module for attention layers
 
-![table]
+![table](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/table.png?raw=true)
+
 
 FID, PSNR and SSIM values for different methods implemented.
 
@@ -43,4 +44,5 @@ FID, PSNR and SSIM values for different methods implemented.
 <!-- ----------------------------------------------------- -->
 ## Reference
 
-The code is majorly borrowed from [PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/master/docs/PEN-Net.gif?raw=true). The images of the architecture is taken from [paper1](https://arxiv.org/pdf/1904.07475.pdf?raw=true), [paper2](https://arxiv.org/abs/1901.06322) and modified. 
+The code is majorly borrowed from [PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/master/docs/PEN-Net.gif?raw=true). The images of the architecture is taken from [Learning Pyramid-Context Encoder Network for High-Quality Image Inpainting](https://arxiv.org/pdf/1904.07475.pdf?raw=true), [Learning Spatial Pyramid Attentive Pooling in Image Synthesis and
+Image-to-Image Translation](https://arxiv.org/abs/1901.06322) and modified. 
