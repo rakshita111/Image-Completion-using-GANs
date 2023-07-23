@@ -1,28 +1,23 @@
-# PEN-Net for Image Inpainting
-![PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/master/docs/PEN-Net.gif?raw=true)
-
-### [Arxiv Paper](https://arxiv.org/abs/1904.07475) | [CVPR Paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Zeng_Learning_Pyramid-Context_Encoder_Network_for_High-Quality_Image_Inpainting_CVPR_2019_paper.pdf) | [Poster](https://drive.google.com/open?id=1Zyfmqa6zUS4fd7aBg577WTPzJj0QyZM9) | [BibTex](https://github.com/researchmm/PEN-Net-for-Inpainting#citation)
-
-Learning Pyramid-Context Encoder Network for High-Quality Image Inpainting<br>
-[Yanhong Zeng](https://sites.google.com/view/1900zyh),  [Jianlong Fu](https://jianlong-fu.github.io/), [Hongyang Chao](https://scholar.google.com/citations?user=qnbpG6gAAAAJ&hl),  and [Baining Guo](https://www.microsoft.com/en-us/research/people/bainguo/).<br>
-In CVPR 2019.
+The existing work on Image Inpainting [PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/master/docs/PEN-Net.gif?raw=true) is improved by adding the [Spatial Pyramid Attentive Pooling](https://arxiv.org/abs/1901.06322) Module at the encoder.
 
 <!-- ------------------------------------------------------------------------------ -->
 ## Introduction 
-Existing inpainting works either fill missing regions by copying fine-grained image patches or generating semantically reasonable patches (by CNN) from region context, while neglect the fact that both visual and semantic plausibility are highly-demanded. 
+The spatial pyramid attentive pooling (SPAP) module used dilated convolution to capture the multi-scale information and further fuse the information from different levels of the pyramid through cascade attention. This is integrated with the PEN-Net in different ways to test for the improvement in the images generated. The SPAP module implemented in coarse-to-fine order is integrated at the multi-scale decoder and with the cross-layer attention transfer (ATN) at the encoder of PEN-Net separately. 
 
-Our proposals combine these two mechanisms by,
-1) **Cross-Layer Attention Transfer (ATN).** We use the learned region affinity from high-lelvel feature maps to guide feature transfer in adjacent low-level layers in an encoder. 
-2) **Pyramid Filling.** We fill holes multiple times (depends on the depth of the encoder) by using ATNs from deep to shallow. 
+![PEN-Net](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/PEN-Net.png?raw=true)
+![PEN-Net_SPAP](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/SPAP_PEN-Net.png?raw=true)
 
 <!-- ------------------------------------------------------------------------------ -->
-## Example Results 
-We re-implement PEN-Net in Pytorch for faster speed, which is slightly different from the original Tensorflow version used in our paper. Each triad shows original image, masked input and our result.
+## Results 
 
-![celebahq](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/pytorch/docs/celebahq.PNG?raw=true)
-![dtd](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/pytorch/docs/dtd.PNG?raw=true)
-![facade](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/pytorch/docs/facade.PNG?raw=true)
-![places2](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/pytorch/docs/places2.PNG?raw=true)
+![dtd](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/dtd_1.png?raw=true)
+![dtd](https://github.com/rakshita111/Image-Completion-using-GANs/blob/main/docs/dtd_2.png?raw=true)
+
+Here are the results obtained on 256x256 images from DTD dataset where (a) Original image, (b) Masked image, (c) Original model output, (d) Original model with SPAP module at decoder, (e) Original model with SPAP module for attention layers
+
+![table]
+
+FID, PSNR and SSIM values for different methods implemented.
 
 <!-- -------------------------------------------------------- -->
 ## Run 
@@ -43,41 +38,3 @@ We re-implement PEN-Net in Pytorch for faster speed, which is slightly different
     * For example, `python test.py -c configs/celebahq.json -n pennet -m square -s 256 `
 4. Evaluating:
     * Run `python eval.py -r [result_path]`
-
-<!-- ------------------------------------------------------------------- -->
-## Pretrained models
-Download the models below and put it under `release_model/`
-
-[CELEBA-HQ](https://drive.google.com/open?id=1Xf_LwP38PLL78817nXfpsHsLuCNWoPX9) | 
-[DTD](https://drive.google.com/open?id=1OCrML2j6apv44-TxJvpOLOzavJmxZtJr) |
-[Facade](https://drive.google.com/open?id=1cTcEMIuii3jJfc5sstXxMQNyTVcV3I8K) |
-[Places2](https://drive.google.com/open?id=1Hd8DUCJMGnCZz53_19zV4_p06YJ0UDt2) 
-
-
-We also provide more results of central square below for your comparisons 
-
-[CELEBA-HQ](https://drive.google.com/open?id=13xa9Gf4q_tu7B3Wr97udBoTXWrMNkrtl) |
-[DTD](https://drive.google.com/open?id=1GYsdh-0vZ-DS4MTR3nBfeAJjsqHS_qau) |
-[Facade](https://drive.google.com/open?id=1g_2Wy2K4wpVaU1Sd3-XS9-jsmQgqJx5V) 
-
-<!-- ------------------------------------------------------------------- -->
-## TensorBoard
-Visualization on TensorBoard for training is supported. 
-
-Run `tensorboard --logdir release_model --port 6006` to view training progress. 
-
-<!-- ------------------------------------------------------------------- -->
-## Citation
-If any part of our paper and code is helpful to your work, please generously cite with:
-```
-@inproceedings{yan2019PENnet,
-  author = {Zeng, Yanhong and Fu, Jianlong and Chao, Hongyang and Guo, Baining},
-  title = {Learning Pyramid-Context Encoder Network for High-Quality Image Inpainting},
-  booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-  pages={1486--1494},
-  year = {2019}
-}
-```
-
-### License
-Licensed under an MIT license.
