@@ -42,5 +42,5 @@ Here are the results obtained on 256x256 images from DTD dataset where (a) Origi
 <!-- ----------------------------------------------------- -->
 ## Reference
 
-The code is majorly borrowed from [PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/master/docs/PEN-Net.gif?raw=true). The images of the architecture is taken from [Learning Pyramid-Context Encoder Network for High-Quality Image Inpainting](https://arxiv.org/pdf/1904.07475.pdf?raw=true), [Learning Spatial Pyramid Attentive Pooling in Image Synthesis and
+The code is majorly borrowed from [PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting). The images of the architecture is taken from [Learning Pyramid-Context Encoder Network for High-Quality Image Inpainting](https://arxiv.org/pdf/1904.07475.pdf?raw=true), [Learning Spatial Pyramid Attentive Pooling in Image Synthesis and
 Image-to-Image Translation](https://arxiv.org/abs/1901.06322) and modified. 
