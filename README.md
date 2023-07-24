@@ -1,4 +1,4 @@
-The existing work on Image Inpainting [PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting/blob/master/docs/PEN-Net.gif?raw=true) is improved by adding the [Spatial Pyramid Attentive Pooling](https://arxiv.org/abs/1901.06322) Module at the encoder.
+The existing work on Image Inpainting [PEN-Net](https://github.com/researchmm/PEN-Net-for-Inpainting) is improved by adding the [Spatial Pyramid Attentive Pooling](https://arxiv.org/abs/1901.06322) Module at the encoder.
 
 <!-- ------------------------------------------------------------------------------ -->
 ## Introduction 
